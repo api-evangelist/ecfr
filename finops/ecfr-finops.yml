@@ -1,0 +1,13 @@
+name: eCFR FinOps
+description: The eCFR API is a free US government service maintained by the Office of the Federal Register (OFR) and the Government Publishing Office (GPO). There are no costs associated with using this API. FinOps considerations are limited to infrastructure costs on the consumer side for caching and storage.
+cost:
+  api_access: Free
+  authentication: None required
+  pricing_url: https://www.ecfr.gov/developers
+considerations:
+  - description: No API costs — the eCFR API is a free government public service funded by US taxpayers.
+  - description: No API keys, registration, or account management required, eliminating identity and access management overhead.
+  - description: Consider client-side caching of regulatory content since regulations change infrequently; the API returns cache-control headers indicating content can be cached.
+  - description: Large title XML downloads (e.g., full Title 40 Environmental Protection) can be several megabytes — implement selective endpoint use (section or part level) to minimize bandwidth.
+  - description: Version history endpoints can return very large payloads — use date-scoped queries and pagination (per_page parameter) to manage response sizes.
+  - description: No SLA or uptime guarantees are published; plan for resilience with local caching of critical regulatory data.

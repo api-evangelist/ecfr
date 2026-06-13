@@ -1,0 +1,86 @@
+aid: ecfr
+name: eCFR
+description: Electronic Code of Federal Regulations REST API for accessing the official US Code of Federal Regulations, searching regulations, and retrieving regulatory version history.
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+url: https://raw.githubusercontent.com/api-evangelist/ecfr/refs/heads/main/apis.yml
+created: '2026-06-13'
+modified: '2026-06-13'
+specificationVersion: '0.19'
+tags:
+  - Federal Regulations
+  - Government
+  - Legal
+  - Compliance
+  - Open Data
+  - United States
+apis:
+  - aid: ecfr:versioner
+    name: eCFR Versioner API
+    description: Provides access to the full text of CFR titles, parts, sections, and appendices at specific dates, as well as version history for regulatory content. Supports XML format responses for hierarchical regulatory structure.
+    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://www.ecfr.gov/developers/documentation/api/v1
+    baseURL: https://www.ecfr.gov/api/versioner/v1
+    tags:
+      - Regulations
+      - Version History
+      - CFR Titles
+    properties:
+      - type: Documentation
+        url: https://www.ecfr.gov/developers/documentation/api/v1
+      - type: OpenAPI
+        url: https://www.ecfr.gov/developers/documentation/api/v1#/
+    contact:
+      - FN: eCFR Developer Support
+        url: https://www.ecfr.gov/developers
+  - aid: ecfr:search
+    name: eCFR Search API
+    description: Full-text search across all Code of Federal Regulations content, with support for filtering by title, agency, date ranges, and content type. Returns ranked results with hierarchical context and full-text excerpts.
+    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://www.ecfr.gov/developers/documentation/api/v1
+    baseURL: https://www.ecfr.gov/api/search/v1
+    tags:
+      - Search
+      - Full-Text Search
+      - Regulations
+    properties:
+      - type: Documentation
+        url: https://www.ecfr.gov/developers/documentation/api/v1
+    contact:
+      - FN: eCFR Developer Support
+        url: https://www.ecfr.gov/developers
+  - aid: ecfr:admin
+    name: eCFR Admin API
+    description: Provides metadata about federal agencies and their CFR references, enabling lookup of which titles and chapters correspond to specific agencies.
+    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://www.ecfr.gov/developers/documentation/api/v1
+    baseURL: https://www.ecfr.gov/api/admin/v1
+    tags:
+      - Agencies
+      - Metadata
+      - Government
+    properties:
+      - type: Documentation
+        url: https://www.ecfr.gov/developers/documentation/api/v1
+    contact:
+      - FN: eCFR Developer Support
+        url: https://www.ecfr.gov/developers
+common:
+  - type: Website
+    url: https://www.ecfr.gov
+  - type: Documentation
+    url: https://www.ecfr.gov/developers/documentation/api/v1
+  - type: GitHubOrg
+    url: https://github.com/usgpo
+  - type: Blog
+    url: https://www.federalregister.gov/blog
+  - type: Pricing
+    url: https://www.ecfr.gov/developers
+  - type: Plans
+    url: https://raw.githubusercontent.com/api-evangelist/ecfr/refs/heads/main/plans/ecfr-plans-pricing.yml
+  - type: RateLimits
+    url: https://raw.githubusercontent.com/api-evangelist/ecfr/refs/heads/main/rate-limits/ecfr-rate-limits.yml
+  - type: FinOps
+    url: https://raw.githubusercontent.com/api-evangelist/ecfr/refs/heads/main/finops/ecfr-finops.yml
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com

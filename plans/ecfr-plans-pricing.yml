@@ -1,0 +1,16 @@
+name: eCFR Plans and Pricing
+description: The Electronic Code of Federal Regulations (eCFR) API is a free, publicly available government service with no cost or registration required. It is maintained by the Office of the Federal Register (OFR) and the Government Publishing Office (GPO) as part of the US government's commitment to open data and transparency.
+plans:
+  - name: Public Access
+    description: Free and open access to the eCFR API with no authentication required. All endpoints are publicly available for developers, researchers, and the general public to access US regulatory data.
+    url: https://www.ecfr.gov/developers
+    price: Free
+    authentication: None
+    features:
+      - Access to all 50 CFR titles
+      - Full text search across all regulations
+      - Regulatory version history and amendments
+      - Agency and title metadata
+      - XML and JSON response formats
+      - Hierarchical structure retrieval
+      - Date-specific regulation snapshots

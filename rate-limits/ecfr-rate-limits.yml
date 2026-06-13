@@ -1,0 +1,14 @@
+name: eCFR Rate Limits
+description: The eCFR API is a free government service. While no formal rate limit policy is published, the API enforces automated scraping restrictions via IP-based blocking. Direct API access is permitted and encouraged as the recommended alternative to web scraping. No authentication or API key is required.
+limits:
+  - name: Public API Access
+    description: No formally documented rate limits for the REST API endpoints. The service blocks automated web scraping but provides full REST API access. Excessive or abusive automated access may result in IP-based blocking.
+    rate: Undocumented
+    authentication: None required
+    notes:
+      - Automated scraping of the ecfr.gov website is restricted and may redirect to unblock.federalregister.gov
+      - REST API endpoints at www.ecfr.gov/api/* are freely accessible without authentication
+      - No API key or registration required
+      - Response headers do not include rate limit headers (X-RateLimit-Limit, X-RateLimit-Remaining)
+      - Large content responses (full title XML) may be cached via CDN (age header present in responses)
+      - Good-faith reasonable use is expected for a government public service

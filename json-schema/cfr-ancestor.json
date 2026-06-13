@@ -1,0 +1,35 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/ecfr/main/json-schema/cfr-ancestor.json",
+  "title": "CfrAncestor",
+  "description": "An ancestor node in the CFR hierarchy as returned by GET /api/versioner/v1/ancestry/{date}/title-{title}.json.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "type": "string",
+      "description": "The type of this hierarchy node.",
+      "enum": ["title", "subtitle", "chapter", "subchapter", "part", "subpart", "subject_group", "section", "appendix"]
+    },
+    "label": {
+      "type": "string",
+      "description": "Full human-readable label for this node (e.g., 'Title 2 - Federal Financial Assistance')."
+    },
+    "label_level": {
+      "type": "string",
+      "description": "Short level label (e.g., 'Title 2', 'Part 200')."
+    },
+    "label_description": {
+      "type": "string",
+      "description": "Descriptive portion of the label (e.g., 'Federal Financial Assistance')."
+    },
+    "reserved": {
+      "type": "boolean",
+      "description": "Whether this node is reserved."
+    },
+    "identifier": {
+      "type": "string",
+      "description": "Identifier for this node within its type (e.g., '2', 'A', 'I', '200')."
+    }
+  },
+  "required": ["type", "label", "identifier"]
+}

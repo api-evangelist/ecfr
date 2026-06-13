@@ -1,0 +1,46 @@
+{
+  "ancestors": [
+    {
+      "identifier": "2",
+      "label": "Title 2\u2014Federal Financial Assistance",
+      "label_level": "Title 2",
+      "label_description": "Federal Financial Assistance",
+      "reserved": false,
+      "type": "title",
+      "size": 2899980
+    },
+    {
+      "identifier": "A",
+      "label": "Subtitle A\u2014Office of Management and Budget Guidance for Federal Financial Assistance",
+      "label_level": "Subtitle A",
+      "label_description": "Office of Management and Budget Guidance for Federal Financial Assistance",
+      "reserved": false,
+      "type": "subtitle",
+      "size": 1039636,
+      "descendant_range": "1 \u2013 299"
+    },
+    {
+      "identifier": "II",
+      "label": " Chapter II\u2014Office of Management and Budget Guidance",
+      "label_level": " Chapter II",
+      "label_description": "Office of Management and Budget Guidance",
+      "reserved": false,
+      "type": "chapter",
+      "size": 697020,
+      "descendant_range": "200 \u2013 299"
+    },
+    {
+      "identifier": "200",
+      "label": "Part 200\u2014Uniform Administrative Requirements, Cost Principles, and Audit Requirements for Federal Awards",
+      "label_level": "Part 200",
+      "label_description": "Uniform Administrative Requirements, Cost Principles, and Audit Requirements for Federal Awards",
+      "reserved": false,
+      "type": "part",
+      "volumes": [
+        "1"
+      ],
+      "size": 697020,
+      "descendant_range": "200.0 \u2013 200.521"
+    }
+  ]
+}

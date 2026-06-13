@@ -1,0 +1,17 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/ecfr/main/json-schema/agencies-response.json",
+  "title": "AgenciesResponse",
+  "description": "Response from GET /api/admin/v1/agencies.json listing all top-level federal agencies in name order.",
+  "type": "object",
+  "properties": {
+    "agencies": {
+      "type": "array",
+      "description": "All top-level agencies in name order; each agency may contain children also in name order.",
+      "items": {
+        "$ref": "agency.json"
+      }
+    }
+  },
+  "required": ["agencies"]
+}

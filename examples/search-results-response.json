@@ -1,0 +1,105 @@
+{
+  "results": [
+    {
+      "starts_on": "2016-12-06",
+      "ends_on": null,
+      "type": "Section",
+      "hierarchy": {
+        "title": "40",
+        "subtitle": null,
+        "chapter": "I",
+        "subchapter": "F",
+        "part": "197",
+        "subpart": "B",
+        "subject_group": "ECFRe68f9f224e6cc58",
+        "section": "197.38",
+        "appendix": null
+      },
+      "hierarchy_headings": {
+        "title": "Title 40",
+        "subtitle": null,
+        "chapter": " Chapter I",
+        "subchapter": "Subchapter F",
+        "part": "Part 197",
+        "subpart": "Subpart B",
+        "subject_group": "Additional Provisions",
+        "section": "\u00a7 197.38",
+        "appendix": null
+      },
+      "headings": {
+        "title": "<strong>Protection</strong> of Environment",
+        "subtitle": null,
+        "chapter": "<strong>Environmental</strong> <strong>Protection</strong> Agency",
+        "subchapter": "Radiation <strong>Protection</strong> Programs",
+        "part": "Public Health and <strong>Environmental</strong> Radiation <strong>Protection</strong> Standards for Yucca Mountain, Nevada",
+        "subpart": "Public Health and <strong>Environmental</strong> Standards for Disposal",
+        "subject_group": "Additional Provisions",
+        "section": "Are the Individual <strong>Protection</strong> and Ground Water <strong>Protection</strong> Standards Severable?",
+        "appendix": null
+      },
+      "full_text_excerpt": "Yes. The individual <strong>protection</strong> and ground water <strong>protection</strong> standards are severable.",
+      "score": 45.70845,
+      "structure_index": 270118,
+      "reserved": false,
+      "removed": false,
+      "change_types": [
+        "effective",
+        "initial"
+      ]
+    },
+    {
+      "starts_on": "2017-01-01",
+      "ends_on": "2025-07-02",
+      "type": "Section",
+      "hierarchy": {
+        "title": "7",
+        "subtitle": "B",
+        "chapter": "VII",
+        "subchapter": "G",
+        "part": "799",
+        "subpart": "ECFR7b3ee71a250c28d",
+        "subject_group": null,
+        "section": "799.50",
+        "appendix": null
+      },
+      "hierarchy_headings": {
+        "title": "Title 7",
+        "subtitle": "Subtitle B",
+        "chapter": " Chapter VII",
+        "subchapter": "Subchapter G",
+        "part": "Part 799",
+        "subpart": "Subpart E",
+        "subject_group": null,
+        "section": "\u00a7 799.50",
+        "appendix": null
+      },
+      "headings": {
+        "title": "Agriculture",
+        "subtitle": "Regulations of the Department of Agriculture",
+        "chapter": "Farm Service Agency, Department of Agriculture",
+        "subchapter": "<strong>Environmental</strong> <strong>Protection</strong>",
+        "part": "Compliance with the National <strong>Environmental</strong> Policy Act",
+        "subpart": "<strong>Environmental</strong> Impact Statements",
+        "subject_group": null,
+        "section": "Purpose of an <strong>Environmental</strong> Impact Statement (EIS).",
+        "appendix": null
+      },
+      "full_text_excerpt": "EIS is to ensure that all significant <strong>environmental</strong> impacts and reasonable alternatives<span class=\"elipsis\">\u2026</span>and may cumulatively have significant <strong>environmental</strong> impacts, although the impact of the",
+      "score": 44.669975,
+      "structure_index": 70938,
+      "reserved": false,
+      "removed": false,
+      "change_types": [
+        "effective",
+        "initial"
+      ]
+    }
+  ],
+  "meta": {
+    "current_page": 1,
+    "total_pages": 5000,
+    "total_count": 10000,
+    "max_score": 45.70845,
+    "description": "Changes to sections matching 'environmental protection'"
+  }
+}

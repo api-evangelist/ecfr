@@ -1,0 +1,54 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/ecfr/main/json-schema/content-version.json",
+  "title": "ContentVersion",
+  "description": "A version record for a CFR section or appendix as returned by GET /api/versioner/v1/versions/title-{title}.json.",
+  "type": "object",
+  "properties": {
+    "date": {
+      "type": "string",
+      "format": "date",
+      "description": "Date on which this version was effective (YYYY-MM-DD)."
+    },
+    "amendment_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Date of the amendment that produced this version (YYYY-MM-DD)."
+    },
+    "issue_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Date on which this content was issued in the Federal Register (YYYY-MM-DD)."
+    },
+    "identifier": {
+      "type": "string",
+      "description": "Section or appendix identifier (e.g., '3474.20')."
+    },
+    "name": {
+      "type": "string",
+      "description": "Section name or heading (e.g., '§ 3474.20 Purpose')."
+    },
+    "part": {
+      "type": "string",
+      "description": "Part number this section belongs to."
+    },
+    "title": {
+      "type": "integer",
+      "description": "CFR title number."
+    },
+    "section": {
+      "type": "string",
+      "description": "Section number."
+    },
+    "type": {
+      "type": "string",
+      "description": "Type of content (e.g., 'section', 'appendix').",
+      "enum": ["section", "appendix"]
+    },
+    "removed": {
+      "type": "boolean",
+      "description": "Whether this content was removed in this version."
+    }
+  },
+  "required": ["date", "identifier", "name"]
+}

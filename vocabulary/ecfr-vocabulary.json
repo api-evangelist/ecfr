@@ -1,0 +1,200 @@
+{
+  "info": {
+    "title": "eCFR API Vocabulary",
+    "description": "Domain vocabulary for the Electronic Code of Federal Regulations (eCFR) REST API covering regulatory hierarchy, search, versioning, and agency metadata.",
+    "version": "1.0.0",
+    "source": "https://www.ecfr.gov/developers/documentation/api/v1"
+  },
+  "terms": [
+    {
+      "term": "CFR",
+      "definition": "Code of Federal Regulations — the official codification of the general and permanent rules and regulations published in the Federal Register by U.S. executive departments and agencies.",
+      "abbreviation": "Code of Federal Regulations"
+    },
+    {
+      "term": "eCFR",
+      "definition": "Electronic Code of Federal Regulations — the online, continuously-updated version of the CFR maintained by the Office of the Federal Register and the Government Publishing Office.",
+      "abbreviation": "Electronic Code of Federal Regulations"
+    },
+    {
+      "term": "title",
+      "definition": "The highest organizational unit of the CFR, numbered 1 through 50, each covering a broad subject area such as Agriculture (Title 7) or Energy (Title 10).",
+      "context": "hierarchy"
+    },
+    {
+      "term": "subtitle",
+      "definition": "An optional sub-division of a CFR title, identified by an uppercase letter (A, B, C), grouping related chapters together.",
+      "context": "hierarchy"
+    },
+    {
+      "term": "chapter",
+      "definition": "A subdivision of a CFR title or subtitle, typically assigned to a specific agency or bureau, identified by Roman numerals.",
+      "context": "hierarchy"
+    },
+    {
+      "term": "subchapter",
+      "definition": "An optional subdivision within a CFR chapter, identified by uppercase letters, grouping related parts.",
+      "context": "hierarchy"
+    },
+    {
+      "term": "part",
+      "definition": "The primary operational unit of the CFR containing regulations on a specific subject. Parts are numbered and contain sections.",
+      "context": "hierarchy"
+    },
+    {
+      "term": "subpart",
+      "definition": "An optional subdivision of a CFR part grouping related sections together, identified by uppercase letters.",
+      "context": "hierarchy"
+    },
+    {
+      "term": "subject_group",
+      "definition": "An informal grouping of sections within a subpart or part that share a related subject, identified by system-generated identifiers.",
+      "context": "hierarchy"
+    },
+    {
+      "term": "section",
+      "definition": "The basic unit of regulatory text in the CFR, identified by part number and section number (e.g., § 200.1), containing the actual regulatory requirements.",
+      "context": "hierarchy"
+    },
+    {
+      "term": "appendix",
+      "definition": "Supplementary material attached to a CFR part, subtitle, chapter, or title, identified by letters, Roman numerals, or descriptive names.",
+      "context": "hierarchy"
+    },
+    {
+      "term": "agency",
+      "definition": "A U.S. federal department, independent agency, or sub-agency that authors and maintains CFR regulations. Agencies are identified by slug and linked to CFR chapter references.",
+      "context": "administration"
+    },
+    {
+      "term": "slug",
+      "definition": "A URL-safe, lowercase hyphenated identifier for an agency (e.g., 'environmental-protection-agency').",
+      "context": "administration"
+    },
+    {
+      "term": "cfr_reference",
+      "definition": "A structured pointer to a specific location in the CFR, consisting of a title number and chapter identifier, linking agencies to the regulatory text they administer.",
+      "context": "administration"
+    },
+    {
+      "term": "correction",
+      "definition": "An editorial or substantive correction to CFR text. Corrections are tracked with the date an error occurred and the date it was corrected.",
+      "context": "corrections"
+    },
+    {
+      "term": "corrective_action",
+      "definition": "A description of the change made to fix a CFR error, such as adding missing text, correcting a typographical error, or updating a cross-reference.",
+      "context": "corrections"
+    },
+    {
+      "term": "fr_citation",
+      "definition": "A Federal Register citation (volume and page number) identifying the official Federal Register publication associated with a correction or amendment.",
+      "context": "corrections"
+    },
+    {
+      "term": "amendment_date",
+      "definition": "The date on which a regulatory amendment became effective in the CFR.",
+      "context": "versioning"
+    },
+    {
+      "term": "issue_date",
+      "definition": "The date on which a CFR amendment or correction was published in the Federal Register.",
+      "context": "versioning"
+    },
+    {
+      "term": "latest_amended_on",
+      "definition": "The most recent date on which any content within a CFR title was amended.",
+      "context": "versioning"
+    },
+    {
+      "term": "up_to_date_as_of",
+      "definition": "The date through which the eCFR data is current. Content after this date may not yet be reflected.",
+      "context": "versioning"
+    },
+    {
+      "term": "substantive",
+      "definition": "Indicates whether a regulatory change is substantive (true = meaningful policy change) versus non-substantive (false = purely editorial or technical correction).",
+      "context": "versioning"
+    },
+    {
+      "term": "content_version",
+      "definition": "A record capturing a specific state of a CFR section or appendix at a point in time, including its identifier, name, and publication dates.",
+      "context": "versioning"
+    },
+    {
+      "term": "ancestor",
+      "definition": "Any node in the CFR hierarchy above a given section or appendix, from the immediate parent up through the title level.",
+      "context": "hierarchy"
+    },
+    {
+      "term": "structure",
+      "definition": "The complete hierarchical outline of a CFR title, showing the tree of subtitles, chapters, subchapters, parts, subparts, subject groups, sections, and appendices.",
+      "context": "hierarchy"
+    },
+    {
+      "term": "full_text_excerpt",
+      "definition": "An HTML snippet of the regulatory text surrounding a search match, with matched terms wrapped in <strong> tags.",
+      "context": "search"
+    },
+    {
+      "term": "score",
+      "definition": "A relevance ranking score assigned to a search result, used to order results by how closely they match the query.",
+      "context": "search"
+    },
+    {
+      "term": "agency_slug",
+      "definition": "A URL-safe identifier for an agency used as a search filter parameter (e.g., 'department-of-agriculture').",
+      "context": "search"
+    },
+    {
+      "term": "hierarchy_headings",
+      "definition": "Human-readable heading labels for each level of the CFR hierarchy at a search result location, without HTML markup.",
+      "context": "search"
+    },
+    {
+      "term": "headings",
+      "definition": "HTML-formatted heading labels for each level of the CFR hierarchy at a search result location, with matched search terms highlighted.",
+      "context": "search"
+    },
+    {
+      "term": "reserved",
+      "definition": "A flag indicating that a CFR title number, part, or section identifier has been reserved for future use but currently contains no regulatory content.",
+      "context": "hierarchy"
+    },
+    {
+      "term": "removed",
+      "definition": "A flag indicating that a CFR section or appendix has been officially removed and is no longer in effect.",
+      "context": "versioning"
+    },
+    {
+      "term": "versioner",
+      "definition": "The eCFR API service that provides access to CFR content and structure at specific historical dates.",
+      "context": "api-services"
+    },
+    {
+      "term": "admin",
+      "definition": "The eCFR API service that provides metadata about federal agencies, their CFR references, and editorial corrections.",
+      "context": "api-services"
+    },
+    {
+      "term": "search",
+      "definition": "The eCFR API service that provides full-text search across all CFR content with filtering, ranking, and aggregation capabilities.",
+      "context": "api-services"
+    },
+    {
+      "term": "identifier",
+      "definition": "The unique identifier for a CFR hierarchy node within its type — a number for titles and parts, a letter for subtitles and subparts, a Roman numeral for chapters, or a decimal string for sections.",
+      "context": "hierarchy"
+    },
+    {
+      "term": "size",
+      "definition": "The byte size of a CFR hierarchy node, indicating the volume of regulatory text contained within it.",
+      "context": "hierarchy"
+    },
+    {
+      "term": "descendant_range",
+      "definition": "The range of part numbers contained within a CFR subtitle or chapter node (e.g., '1 – 299').",
+      "context": "hierarchy"
+    }
+  ]
+}

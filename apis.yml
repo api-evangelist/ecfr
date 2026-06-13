@@ -28,7 +28,7 @@ apis:
       - type: Documentation
         url: https://www.ecfr.gov/developers/documentation/api/v1
       - type: OpenAPI
-        url: https://www.ecfr.gov/developers/documentation/api/v1#/
+        url: https://raw.githubusercontent.com/api-evangelist/ecfr/refs/heads/main/openapi/ecfr-openapi.json
     contact:
       - FN: eCFR Developer Support
         url: https://www.ecfr.gov/developers
@@ -45,6 +45,8 @@ apis:
     properties:
       - type: Documentation
         url: https://www.ecfr.gov/developers/documentation/api/v1
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/ecfr/refs/heads/main/openapi/ecfr-openapi.json
     contact:
       - FN: eCFR Developer Support
         url: https://www.ecfr.gov/developers
@@ -61,6 +63,8 @@ apis:
     properties:
       - type: Documentation
         url: https://www.ecfr.gov/developers/documentation/api/v1
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/ecfr/refs/heads/main/openapi/ecfr-openapi.json
     contact:
       - FN: eCFR Developer Support
         url: https://www.ecfr.gov/developers
@@ -81,6 +85,34 @@ common:
     url: https://raw.githubusercontent.com/api-evangelist/ecfr/refs/heads/main/rate-limits/ecfr-rate-limits.yml
   - type: FinOps
     url: https://raw.githubusercontent.com/api-evangelist/ecfr/refs/heads/main/finops/ecfr-finops.yml
+  - type: OpenAPI
+    url: https://raw.githubusercontent.com/api-evangelist/ecfr/refs/heads/main/openapi/ecfr-openapi.json
+  - type: JSONSchema
+    url: https://raw.githubusercontent.com/api-evangelist/ecfr/refs/heads/main/json-schema/agency.json
+  - type: JSONSchema
+    url: https://raw.githubusercontent.com/api-evangelist/ecfr/refs/heads/main/json-schema/cfr-title.json
+  - type: JSONSchema
+    url: https://raw.githubusercontent.com/api-evangelist/ecfr/refs/heads/main/json-schema/search-result.json
+  - type: JSONSchema
+    url: https://raw.githubusercontent.com/api-evangelist/ecfr/refs/heads/main/json-schema/content-version.json
+  - type: JSONSchema
+    url: https://raw.githubusercontent.com/api-evangelist/ecfr/refs/heads/main/json-schema/correction.json
+  - type: JSONSchema
+    url: https://raw.githubusercontent.com/api-evangelist/ecfr/refs/heads/main/json-schema/cfr-ancestor.json
+  - type: Vocabulary
+    url: https://raw.githubusercontent.com/api-evangelist/ecfr/refs/heads/main/vocabulary/ecfr-vocabulary.json
+  - type: JSONLDContext
+    url: https://raw.githubusercontent.com/api-evangelist/ecfr/refs/heads/main/json-ld/ecfr-context.json
+  - type: Examples
+    url: https://raw.githubusercontent.com/api-evangelist/ecfr/refs/heads/main/examples/titles-response.json
+  - type: Examples
+    url: https://raw.githubusercontent.com/api-evangelist/ecfr/refs/heads/main/examples/agencies-response.json
+  - type: Examples
+    url: https://raw.githubusercontent.com/api-evangelist/ecfr/refs/heads/main/examples/search-results-response.json
+  - type: Examples
+    url: https://raw.githubusercontent.com/api-evangelist/ecfr/refs/heads/main/examples/ancestry-response.json
+  - type: Examples
+    url: https://raw.githubusercontent.com/api-evangelist/ecfr/refs/heads/main/examples/versions-response.json
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com

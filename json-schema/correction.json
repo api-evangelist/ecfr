@@ -1,0 +1,90 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/ecfr/main/json-schema/correction.json",
+  "title": "EcfrCorrection",
+  "description": "An eCFR correction record representing an editorial or substantive correction applied to the Code of Federal Regulations.",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "integer",
+      "description": "Unique identifier for this correction."
+    },
+    "cfr_references": {
+      "type": "array",
+      "description": "CFR references affected by this correction.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "cfr_reference": {
+            "type": "string",
+            "description": "Human-readable CFR citation (e.g., '7 CFR 2.80')."
+          },
+          "hierarchy": {
+            "type": "object",
+            "description": "Structured hierarchy identifiers for the affected content.",
+            "properties": {
+              "title": { "type": "string" },
+              "subtitle": { "type": "string" },
+              "chapter": { "type": "string" },
+              "subchapter": { "type": "string" },
+              "part": { "type": "string" },
+              "subpart": { "type": "string" },
+              "section": { "type": "string" },
+              "appendix": { "type": "string" }
+            }
+          }
+        },
+        "required": ["cfr_reference", "hierarchy"]
+      }
+    },
+    "corrected_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Date on which the correction was made (YYYY-MM-DD)."
+    },
+    "error_corrected_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Date on which the error was corrected (YYYY-MM-DD)."
+    },
+    "error_occurred_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Date on which the error originally occurred (YYYY-MM-DD)."
+    },
+    "fr_citation": {
+      "type": "string",
+      "description": "Federal Register citation for the correction."
+    },
+    "position": {
+      "type": "integer",
+      "description": "Position order of the correction."
+    },
+    "display_in_toc": {
+      "type": "boolean",
+      "description": "Whether this correction should display in the table of contents."
+    },
+    "title": {
+      "type": "integer",
+      "description": "CFR title number affected by this correction."
+    },
+    "corrective_action": {
+      "type": "string",
+      "description": "Description of the corrective action taken."
+    },
+    "year": {
+      "type": "integer",
+      "description": "Year in which the correction was published."
+    },
+    "last_modified": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Timestamp of last modification to this correction record."
+    },
+    "document_number": {
+      "type": "string",
+      "description": "Federal Register document number."
+    }
+  },
+  "required": ["id", "cfr_references"]
+}

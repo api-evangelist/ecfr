@@ -1,0 +1,96 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/ecfr/main/json-schema/search-result.json",
+  "title": "SearchResult",
+  "description": "A single search result from GET /api/search/v1/results including hierarchical context and full-text excerpt.",
+  "type": "object",
+  "properties": {
+    "starts_on": {
+      "type": "string",
+      "format": "date",
+      "description": "Effective start date of this regulatory content (YYYY-MM-DD)."
+    },
+    "ends_on": {
+      "type": ["string", "null"],
+      "format": "date",
+      "description": "Effective end date of this content, or null if currently in effect."
+    },
+    "type": {
+      "type": "string",
+      "description": "Type of the matched content node.",
+      "enum": ["Title", "Subtitle", "Chapter", "Subchapter", "Part", "Subpart", "Subject Group", "Section", "Appendix"]
+    },
+    "hierarchy": {
+      "type": "object",
+      "description": "Structural identifiers for the matched content.",
+      "properties": {
+        "title": { "type": "string" },
+        "subtitle": { "type": ["string", "null"] },
+        "chapter": { "type": ["string", "null"] },
+        "subchapter": { "type": ["string", "null"] },
+        "part": { "type": ["string", "null"] },
+        "subpart": { "type": ["string", "null"] },
+        "subject_group": { "type": ["string", "null"] },
+        "section": { "type": ["string", "null"] },
+        "appendix": { "type": ["string", "null"] }
+      },
+      "required": ["title"]
+    },
+    "hierarchy_headings": {
+      "type": "object",
+      "description": "Human-readable heading labels for each level of the hierarchy.",
+      "properties": {
+        "title": { "type": "string" },
+        "subtitle": { "type": ["string", "null"] },
+        "chapter": { "type": ["string", "null"] },
+        "subchapter": { "type": ["string", "null"] },
+        "part": { "type": ["string", "null"] },
+        "subpart": { "type": ["string", "null"] },
+        "subject_group": { "type": ["string", "null"] },
+        "section": { "type": ["string", "null"] },
+        "appendix": { "type": ["string", "null"] }
+      }
+    },
+    "headings": {
+      "type": "object",
+      "description": "HTML-highlighted heading labels showing matched search terms.",
+      "properties": {
+        "title": { "type": "string" },
+        "subtitle": { "type": ["string", "null"] },
+        "chapter": { "type": ["string", "null"] },
+        "subchapter": { "type": ["string", "null"] },
+        "part": { "type": ["string", "null"] },
+        "subpart": { "type": ["string", "null"] },
+        "subject_group": { "type": ["string", "null"] },
+        "section": { "type": ["string", "null"] },
+        "appendix": { "type": ["string", "null"] }
+      }
+    },
+    "full_text_excerpt": {
+      "type": "string",
+      "description": "HTML excerpt from the full text with matched terms highlighted in <strong> tags."
+    },
+    "score": {
+      "type": "number",
+      "description": "Relevance score for this search result."
+    },
+    "structure_index": {
+      "type": "integer",
+      "description": "Position index within the document structure."
+    },
+    "reserved": {
+      "type": "boolean",
+      "description": "Whether this content node is reserved."
+    },
+    "removed": {
+      "type": "boolean",
+      "description": "Whether this content node has been removed."
+    },
+    "change_types": {
+      "type": "array",
+      "description": "Types of changes applied to this content.",
+      "items": { "type": "string" }
+    }
+  },
+  "required": ["type", "hierarchy"]
+}

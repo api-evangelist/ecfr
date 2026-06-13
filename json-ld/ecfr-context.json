@@ -1,0 +1,267 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "ecfr": "https://www.ecfr.gov/vocab#",
+    "schema": "https://schema.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+
+    "Agency": "ecfr:Agency",
+    "CfrTitle": "ecfr:CfrTitle",
+    "CfrCorrection": "ecfr:CfrCorrection",
+    "CfrAncestor": "ecfr:CfrAncestor",
+    "ContentVersion": "ecfr:ContentVersion",
+    "SearchResult": "ecfr:SearchResult",
+    "CfrReference": "ecfr:CfrReference",
+    "CfrHierarchy": "ecfr:CfrHierarchy",
+
+    "name": {
+      "@id": "schema:name",
+      "@type": "xsd:string"
+    },
+    "short_name": {
+      "@id": "ecfr:shortName",
+      "@type": "xsd:string"
+    },
+    "display_name": {
+      "@id": "ecfr:displayName",
+      "@type": "xsd:string"
+    },
+    "sortable_name": {
+      "@id": "ecfr:sortableName",
+      "@type": "xsd:string"
+    },
+    "slug": {
+      "@id": "ecfr:slug",
+      "@type": "xsd:string"
+    },
+    "children": {
+      "@id": "ecfr:children",
+      "@container": "@set"
+    },
+    "cfr_references": {
+      "@id": "ecfr:cfrReferences",
+      "@container": "@set"
+    },
+    "agencies": {
+      "@id": "ecfr:agencies",
+      "@container": "@set"
+    },
+
+    "number": {
+      "@id": "ecfr:titleNumber",
+      "@type": "xsd:integer"
+    },
+    "latest_amended_on": {
+      "@id": "ecfr:latestAmendedOn",
+      "@type": "xsd:date"
+    },
+    "latest_issue_date": {
+      "@id": "ecfr:latestIssueDate",
+      "@type": "xsd:date"
+    },
+    "up_to_date_as_of": {
+      "@id": "ecfr:upToDateAsOf",
+      "@type": "xsd:date"
+    },
+    "reserved": {
+      "@id": "ecfr:reserved",
+      "@type": "xsd:boolean"
+    },
+    "removed": {
+      "@id": "ecfr:removed",
+      "@type": "xsd:boolean"
+    },
+    "titles": {
+      "@id": "ecfr:titles",
+      "@container": "@set"
+    },
+
+    "id": {
+      "@id": "schema:identifier",
+      "@type": "xsd:integer"
+    },
+    "corrected_date": {
+      "@id": "ecfr:correctedDate",
+      "@type": "xsd:date"
+    },
+    "error_corrected_date": {
+      "@id": "ecfr:errorCorrectedDate",
+      "@type": "xsd:date"
+    },
+    "error_occurred_date": {
+      "@id": "ecfr:errorOccurredDate",
+      "@type": "xsd:date"
+    },
+    "fr_citation": {
+      "@id": "ecfr:frCitation",
+      "@type": "xsd:string"
+    },
+    "corrective_action": {
+      "@id": "ecfr:correctiveAction",
+      "@type": "xsd:string"
+    },
+    "document_number": {
+      "@id": "ecfr:documentNumber",
+      "@type": "xsd:string"
+    },
+    "ecfr_corrections": {
+      "@id": "ecfr:corrections",
+      "@container": "@set"
+    },
+    "cfr_reference": {
+      "@id": "ecfr:cfrReferenceText",
+      "@type": "xsd:string"
+    },
+
+    "type": {
+      "@id": "ecfr:nodeType",
+      "@type": "xsd:string"
+    },
+    "label": {
+      "@id": "rdfs:label",
+      "@type": "xsd:string"
+    },
+    "label_level": {
+      "@id": "ecfr:labelLevel",
+      "@type": "xsd:string"
+    },
+    "label_description": {
+      "@id": "ecfr:labelDescription",
+      "@type": "xsd:string"
+    },
+    "identifier": {
+      "@id": "ecfr:identifier",
+      "@type": "xsd:string"
+    },
+    "size": {
+      "@id": "ecfr:size",
+      "@type": "xsd:integer"
+    },
+    "descendant_range": {
+      "@id": "ecfr:descendantRange",
+      "@type": "xsd:string"
+    },
+    "ancestors": {
+      "@id": "ecfr:ancestors",
+      "@container": "@list"
+    },
+
+    "date": {
+      "@id": "ecfr:effectiveDate",
+      "@type": "xsd:date"
+    },
+    "amendment_date": {
+      "@id": "ecfr:amendmentDate",
+      "@type": "xsd:date"
+    },
+    "issue_date": {
+      "@id": "ecfr:issueDate",
+      "@type": "xsd:date"
+    },
+    "part": {
+      "@id": "ecfr:partIdentifier",
+      "@type": "xsd:string"
+    },
+    "section": {
+      "@id": "ecfr:sectionIdentifier",
+      "@type": "xsd:string"
+    },
+    "subpart": {
+      "@id": "ecfr:subpartIdentifier",
+      "@type": "xsd:string"
+    },
+    "title": {
+      "@id": "ecfr:titleIdentifier"
+    },
+    "substantive": {
+      "@id": "ecfr:substantive",
+      "@type": "xsd:boolean"
+    },
+    "content_versions": {
+      "@id": "ecfr:contentVersions",
+      "@container": "@set"
+    },
+
+    "starts_on": {
+      "@id": "schema:validFrom",
+      "@type": "xsd:date"
+    },
+    "ends_on": {
+      "@id": "schema:validThrough",
+      "@type": "xsd:date"
+    },
+    "hierarchy": {
+      "@id": "ecfr:hierarchy",
+      "@type": "@id"
+    },
+    "hierarchy_headings": {
+      "@id": "ecfr:hierarchyHeadings"
+    },
+    "headings": {
+      "@id": "ecfr:headings"
+    },
+    "full_text_excerpt": {
+      "@id": "ecfr:fullTextExcerpt",
+      "@type": "xsd:string"
+    },
+    "score": {
+      "@id": "ecfr:searchScore",
+      "@type": "xsd:float"
+    },
+    "structure_index": {
+      "@id": "ecfr:structureIndex",
+      "@type": "xsd:integer"
+    },
+    "change_types": {
+      "@id": "ecfr:changeTypes",
+      "@container": "@set"
+    },
+    "results": {
+      "@id": "ecfr:searchResults",
+      "@container": "@set"
+    },
+
+    "chapter": {
+      "@id": "ecfr:chapterIdentifier",
+      "@type": "xsd:string"
+    },
+    "subtitle": {
+      "@id": "ecfr:subtitleIdentifier",
+      "@type": "xsd:string"
+    },
+    "subchapter": {
+      "@id": "ecfr:subchapterIdentifier",
+      "@type": "xsd:string"
+    },
+    "subject_group": {
+      "@id": "ecfr:subjectGroupIdentifier",
+      "@type": "xsd:string"
+    },
+    "appendix": {
+      "@id": "ecfr:appendixIdentifier",
+      "@type": "xsd:string"
+    },
+
+    "meta": {
+      "@id": "ecfr:responseMeta"
+    },
+    "import_in_progress": {
+      "@id": "ecfr:importInProgress",
+      "@type": "xsd:boolean"
+    },
+    "result_count": {
+      "@id": "ecfr:resultCount"
+    },
+    "total_pages": {
+      "@id": "ecfr:totalPages"
+    },
+    "per_page": {
+      "@id": "ecfr:perPage"
+    },
+    "page": {
+      "@id": "ecfr:page"
+    }
+  }
+}

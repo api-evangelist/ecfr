@@ -1,0 +1,48 @@
+{
+  "titles": [
+    {
+      "number": 1,
+      "name": "General Provisions",
+      "latest_amended_on": "2022-12-29",
+      "latest_issue_date": "2024-05-17",
+      "up_to_date_as_of": "2026-06-10",
+      "reserved": false
+    },
+    {
+      "number": 2,
+      "name": "Federal Financial Assistance",
+      "latest_amended_on": "2026-04-09",
+      "latest_issue_date": "2026-04-09",
+      "up_to_date_as_of": "2026-06-10",
+      "reserved": false
+    },
+    {
+      "number": 3,
+      "name": "The President",
+      "latest_amended_on": "2015-03-17",
+      "latest_issue_date": "2024-05-17",
+      "up_to_date_as_of": "2026-06-10",
+      "reserved": false
+    },
+    {
+      "number": 4,
+      "name": "Accounts",
+      "latest_amended_on": "2024-07-18",
+      "latest_issue_date": "2024-07-18",
+      "up_to_date_as_of": "2026-06-10",
+      "reserved": false
+    },
+    {
+      "number": 5,
+      "name": "Administrative Personnel",
+      "latest_amended_on": "2026-06-10",
+      "latest_issue_date": "2026-06-10",
+      "up_to_date_as_of": "2026-06-10",
+      "reserved": false
+    }
+  ],
+  "meta": {
+    "date": "2026-06-11",
+    "import_in_progress": true
+  }
+}

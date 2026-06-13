@@ -1,0 +1,65 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/ecfr/main/json-schema/agency.json",
+  "title": "Agency",
+  "description": "A federal agency with CFR references as returned by the eCFR Admin API.",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Full name of the federal agency."
+    },
+    "short_name": {
+      "type": "string",
+      "description": "Abbreviated acronym for the agency."
+    },
+    "display_name": {
+      "type": "string",
+      "description": "Display-friendly name including parent department context."
+    },
+    "sortable_name": {
+      "type": "string",
+      "description": "Inverted name used for alphabetical sorting (e.g., 'Agriculture, Department of')."
+    },
+    "slug": {
+      "type": "string",
+      "description": "URL-safe slug identifier for the agency.",
+      "pattern": "^[a-z0-9\\-]+$"
+    },
+    "children": {
+      "type": "array",
+      "description": "Sub-agencies that belong to this parent agency.",
+      "items": {
+        "$ref": "#"
+      }
+    },
+    "cfr_references": {
+      "type": "array",
+      "description": "CFR title and chapter references associated with this agency.",
+      "items": {
+        "$ref": "#/definitions/CfrReference"
+      }
+    }
+  },
+  "required": ["name", "short_name", "display_name", "sortable_name", "slug", "children", "cfr_references"],
+  "definitions": {
+    "CfrReference": {
+      "type": "object",
+      "description": "A reference to a specific CFR title and chapter.",
+      "properties": {
+        "title": {
+          "type": "integer",
+          "description": "CFR title number (1-50).",
+          "minimum": 1,
+          "maximum": 50
+        },
+        "chapter": {
+          "type": "string",
+          "description": "CFR chapter identifier (Roman numeral or digit).",
+          "example": "III"
+        }
+      },
+      "required": ["title", "chapter"]
+    }
+  }
+}

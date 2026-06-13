@@ -1,0 +1,39 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/ecfr/main/json-schema/cfr-title.json",
+  "title": "CfrTitle",
+  "description": "Summary information about a single CFR title as returned by GET /api/versioner/v1/titles.json.",
+  "type": "object",
+  "properties": {
+    "number": {
+      "type": "integer",
+      "description": "CFR title number (1-50).",
+      "minimum": 1,
+      "maximum": 50
+    },
+    "name": {
+      "type": "string",
+      "description": "Subject area name for this CFR title (e.g., 'Agriculture', 'Energy')."
+    },
+    "latest_amended_on": {
+      "type": "string",
+      "format": "date",
+      "description": "Date of the most recent amendment to this title (YYYY-MM-DD)."
+    },
+    "latest_issue_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Date of the most recent issue publication for this title (YYYY-MM-DD)."
+    },
+    "up_to_date_as_of": {
+      "type": "string",
+      "format": "date",
+      "description": "Date through which the eCFR data for this title is current (YYYY-MM-DD)."
+    },
+    "reserved": {
+      "type": "boolean",
+      "description": "Whether this title number is currently reserved (no content assigned)."
+    }
+  },
+  "required": ["number", "name", "reserved"]
+}

@@ -69,6 +69,10 @@ apis:
       - FN: eCFR Developer Support
         url: https://www.ecfr.gov/developers
 common:
+  - type: VulnerabilityDisclosure
+    url: security/ecfr-vulnerability-disclosure.yml
+  - type: DomainSecurity
+    url: security/ecfr-domain-security.yml
   - type: Website
     url: https://www.ecfr.gov
   - type: Documentation

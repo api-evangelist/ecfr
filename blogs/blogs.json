@@ -6,9 +6,16 @@
       "feed_url": "https://www.federalregister.gov/blog",
       "title": "",
       "saved": 0,
-      "error": "302 redirect to unblock.federalregister.gov CAPTCHA page; blog not fetchable"
+      "method": "none"
+    },
+    {
+      "source": "https://github.com/usgpo",
+      "feed_url": "https://github.com/usgpo",
+      "title": "",
+      "saved": 0,
+      "method": "none"
     }
   ],
   "post_count": 0,
-  "fetched": "2026-06-27T12:38:51Z"
+  "fetched": "2026-07-11T11:50:51Z"
 }

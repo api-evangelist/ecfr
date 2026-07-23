@@ -1,0 +1,415 @@
+swagger: '2.0'
+info:
+  title: eCFR API Documentation Admin Service Search Service API
+  description: Access eCFR metadata through JSON
+host: www.ecfr.gov
+tags:
+- name: Search Service
+  description: Historical search of the eCFR
+paths:
+  /api/search/v1/results:
+    get:
+      summary: Search results
+      parameters:
+      - name: query
+        description: Search term; searches the headings and the full text
+        in: query
+        type: string
+      - name: agency_slugs[]
+        description: limit to content currently associated with these agencies (see AdminService agencies endpoint to retrieve a list of agency slugs)
+        in: query
+        type: array
+        items:
+          type: string
+        style: form
+        explode: true
+        collectionFormat: multi
+      - name: date
+        description: limit to content present on this date (YYYY-MM-DD)
+        in: query
+        type: string
+        format: date
+      - name: last_modified_after
+        description: limit to content last modified after this date (YYYY-MM-DD)
+        in: query
+        type: string
+        format: date
+      - name: last_modified_on_or_after
+        description: limit to content last modified on or after this date (YYYY-MM-DD)
+        in: query
+        type: string
+        format: date
+      - name: last_modified_before
+        description: limit to content last modified before this date (YYYY-MM-DD)
+        in: query
+        type: string
+        format: date
+      - name: last_modified_on_or_before
+        description: limit to content last modified on or before this date (YYYY-MM-DD)
+        in: query
+        type: string
+        format: date
+      - name: per_page
+        description: number of results per page; max of 1,000
+        default: 20
+        in: query
+        type: integer
+      - name: page
+        description: page of results; can't paginate beyond 10,000 total results
+        default: 1
+        in: query
+        type: integer
+      - name: order
+        description: order of results
+        in: query
+        type: string
+        default: relevance
+        enum:
+        - citations
+        - relevance
+        - hierarchy
+        - newest_first
+        - oldest_first
+        - suggestions
+      - name: paginate_by
+        description: how results should be paginated - 'date' will group results so that all results from a date appear on the same page of pagination. If 'date' is chosen then one of the last_modified_* options is required.
+        in: query
+        type: string
+        default: results
+        enum:
+        - date
+        - results
+      responses:
+        '200':
+          description: Success
+          schema:
+            type: object
+            properties:
+              results:
+                type: array
+                description: A set of sections and appendices that match the provided query params
+              meta:
+                type: object
+                properties:
+                  description:
+                    type: string
+                    description: description of the search results
+                  current_page:
+                    type: integer
+                    description: current page of results
+                  total_count:
+                    type: integer
+                    description: total count of matching results across all pages
+                  total_pages:
+                    type: integer
+                    description: total number of pages in the search results
+                  max_score:
+                    type: number
+                    format: float
+                    description: the maximum score of any match in the search
+                  min_date:
+                    type: string
+                    format: date
+                    description: the minimum date of all returned results (returned when paginate_by=date option is provided)
+                  max_date:
+                    type: string
+                    format: date
+                    description: the maximum date of all returned results (returned when paginate_by=date option is provided)
+        '405':
+          description: Invalid input
+      tags:
+      - Search Service
+  /api/search/v1/count:
+    get:
+      summary: Search result count
+      parameters:
+      - name: query
+        description: Search term; searches the headings and the full text
+        in: query
+        type: string
+      - name: agency_slugs[]
+        description: limit to content currently associated with these agencies (see AdminService agencies endpoint to retrieve a list of agency slugs)
+        in: query
+        type: array
+        items:
+          type: string
+        style: form
+        explode: true
+        collectionFormat: multi
+      - name: date
+        description: limit to content present on this date (YYYY-MM-DD)
+        in: query
+        type: string
+        format: date
+      - name: last_modified_after
+        description: limit to content last modified after this date (YYYY-MM-DD)
+        in: query
+        type: string
+        format: date
+      - name: last_modified_on_or_after
+        description: limit to content last modified on or after this date (YYYY-MM-DD)
+        in: query
+        type: string
+        format: date
+      - name: last_modified_before
+        description: limit to content last modified before this date (YYYY-MM-DD)
+        in: query
+        type: string
+        format: date
+      - name: last_modified_on_or_before
+        description: limit to content last modified on or before this date (YYYY-MM-DD)
+        in: query
+        type: string
+        format: date
+      responses:
+        '200':
+          description: Success
+        '405':
+          description: Invalid input
+      tags:
+      - Search Service
+  /api/search/v1/summary:
+    get:
+      summary: Search summary details
+      parameters:
+      - name: query
+        description: Search term; searches the headings and the full text
+        in: query
+        type: string
+      - name: agency_slugs[]
+        description: limit to content currently associated with these agencies (see AdminService agencies endpoint to retrieve a list of agency slugs)
+        in: query
+        type: array
+        items:
+          type: string
+        style: form
+        explode: true
+        collectionFormat: multi
+      - name: date
+        description: limit to content present on this date (YYYY-MM-DD)
+        in: query
+        type: string
+        format: date
+      - name: last_modified_after
+        description: limit to content last modified after this date (YYYY-MM-DD)
+        in: query
+        type: string
+        format: date
+      - name: last_modified_on_or_after
+        description: limit to content last modified on or after this date (YYYY-MM-DD)
+        in: query
+        type: string
+        format: date
+      - name: last_modified_before
+        description: limit to content last modified before this date (YYYY-MM-DD)
+        in: query
+        type: string
+        format: date
+      - name: last_modified_on_or_before
+        description: limit to content last modified on or before this date (YYYY-MM-DD)
+        in: query
+        type: string
+        format: date
+      responses:
+        '200':
+          description: Success
+        '405':
+          description: Invalid input
+      tags:
+      - Search Service
+  /api/search/v1/counts/daily:
+    get:
+      summary: Search result counts by date
+      parameters:
+      - name: query
+        description: Search term; searches the headings and the full text
+        in: query
+        type: string
+      - name: agency_slugs[]
+        description: limit to content currently associated with these agencies (see AdminService agencies endpoint to retrieve a list of agency slugs)
+        in: query
+        type: array
+        items:
+          type: string
+        style: form
+        explode: true
+        collectionFormat: multi
+      - name: date
+        description: limit to content present on this date (YYYY-MM-DD)
+        in: query
+        type: string
+        format: date
+      - name: last_modified_after
+        description: limit to content last modified after this date (YYYY-MM-DD)
+        in: query
+        type: string
+        format: date
+      - name: last_modified_on_or_after
+        description: limit to content last modified on or after this date (YYYY-MM-DD)
+        in: query
+        type: string
+        format: date
+      - name: last_modified_before
+        description: limit to content last modified before this date (YYYY-MM-DD)
+        in: query
+        type: string
+        format: date
+      - name: last_modified_on_or_before
+        description: limit to content last modified on or before this date (YYYY-MM-DD)
+        in: query
+        type: string
+        format: date
+      responses:
+        '200':
+          description: Success
+        '405':
+          description: Invalid input
+      tags:
+      - Search Service
+  /api/search/v1/counts/titles:
+    get:
+      summary: Search result counts by title
+      parameters:
+      - name: query
+        description: Search term; searches the headings and the full text
+        in: query
+        type: string
+      - name: agency_slugs[]
+        description: limit to content currently associated with these agencies (see AdminService agencies endpoint to retrieve a list of agency slugs)
+        in: query
+        type: array
+        items:
+          type: string
+        style: form
+        explode: true
+        collectionFormat: multi
+      - name: date
+        description: limit to content present on this date (YYYY-MM-DD)
+        in: query
+        type: string
+        format: date
+      - name: last_modified_after
+        description: limit to content last modified after this date (YYYY-MM-DD)
+        in: query
+        type: string
+        format: date
+      - name: last_modified_on_or_after
+        description: limit to content last modified on or after this date (YYYY-MM-DD)
+        in: query
+        type: string
+        format: date
+      - name: last_modified_before
+        description: limit to content last modified before this date (YYYY-MM-DD)
+        in: query
+        type: string
+        format: date
+      - name: last_modified_on_or_before
+        description: limit to content last modified on or before this date (YYYY-MM-DD)
+        in: query
+        type: string
+        format: date
+      responses:
+        '200':
+          description: Success
+        '405':
+          description: Invalid input
+      tags:
+      - Search Service
+  /api/search/v1/counts/hierarchy:
+    get:
+      summary: Search result counts by hierarchy
+      parameters:
+      - name: query
+        description: Search term; searches the headings and the full text
+        in: query
+        type: string
+      - name: agency_slugs[]
+        description: limit to content currently associated with these agencies (see AdminService agencies endpoint to retrieve a list of agency slugs)
+        in: query
+        type: array
+        items:
+          type: string
+        style: form
+        explode: true
+        collectionFormat: multi
+      - name: date
+        description: limit to content present on this date (YYYY-MM-DD)
+        in: query
+        type: string
+        format: date
+      - name: last_modified_after
+        description: limit to content last modified after this date (YYYY-MM-DD)
+        in: query
+        type: string
+        format: date
+      - name: last_modified_on_or_after
+        description: limit to content last modified on or after this date (YYYY-MM-DD)
+        in: query
+        type: string
+        format: date
+      - name: last_modified_before
+        description: limit to content last modified before this date (YYYY-MM-DD)
+        in: query
+        type: string
+        format: date
+      - name: last_modified_on_or_before
+        description: limit to content last modified on or before this date (YYYY-MM-DD)
+        in: query
+        type: string
+        format: date
+      responses:
+        '200':
+          description: Success
+        '405':
+          description: Invalid input
+      tags:
+      - Search Service
+  /api/search/v1/suggestions:
+    get:
+      summary: Search suggestions
+      parameters:
+      - name: query
+        description: Search term; searches the headings and the full text
+        in: query
+        type: string
+      - name: agency_slugs[]
+        description: limit to content currently associated with these agencies (see AdminService agencies endpoint to retrieve a list of agency slugs)
+        in: query
+        type: array
+        items:
+          type: string
+        style: form
+        explode: true
+        collectionFormat: multi
+      - name: date
+        description: limit to content present on this date (YYYY-MM-DD)
+        in: query
+        type: string
+        format: date
+      - name: last_modified_after
+        description: limit to content last modified after this date (YYYY-MM-DD)
+        in: query
+        type: string
+        format: date
+      - name: last_modified_on_or_after
+        description: limit to content last modified on or after this date (YYYY-MM-DD)
+        in: query
+        type: string
+        format: date
+      - name: last_modified_before
+        description: limit to content last modified before this date (YYYY-MM-DD)
+        in: query
+        type: string
+        format: date
+      - name: last_modified_on_or_before
+        description: limit to content last modified on or before this date (YYYY-MM-DD)
+        in: query
+        type: string
+        format: date
+      responses:
+        '200':
+          description: Success
+        '405':
+          description: Invalid input
+      tags:
+      - Search Service

@@ -1,0 +1,69 @@
+swagger: '2.0'
+info:
+  title: eCFR API Documentation Admin Service API
+  description: Access eCFR metadata through JSON
+host: www.ecfr.gov
+tags:
+- name: Admin Service
+  description: Access eCFR metadata through JSON
+paths:
+  /api/admin/v1/agencies.json:
+    get:
+      summary: Agencies
+      description: All top-level agencies in name order with children also in name order
+      parameters: []
+      responses:
+        '200':
+          description: "```json\n  {\n    \"agencies\": [\n      {\n        \"name\": \"Administrative Conference of the United States\",\n        \"short_name\": \"ACUS\",\n        \"display_name\": \"Administrative Conference of the United States\",\n        \"sortable_name\": \"Administrative Conference of the United States\",\n        \"slug\": \"administrative-conference-of-the-united-states\",\n        \"children\": [],\n        \"cfr_references\": [\n          {\n            \"title\": 1,\n            \"chapter\": \"III\"\n          }\n        ]\n      },\n  ...\n      {\n        \"name\": \"Department of Agriculture\",\n        \"short_name\": \"USDA\",\n        \"display_name\": \"Department of Agriculture\",\n        \"sortable_name\": \"Agriculture, Department of\",\n        \"slug\": \"agriculture-department\",\n        \"children\": [\n          {\n          \"name\": \"Agricultural Marketing Service\",\n          \"short_name\": \"AMS\",\n          \"display_name\": \"Agricultural Marketing Service, Department of Agriculture\",\n          \"sortable_name\": \"Agricultural Marketing Service\",\n          \"slug\": \"agricultural-marketing-service\",\n          \"cfr_references\": [\n            {\n              \"title\": 7,\n              \"chapter\": \"I\"\n            },\n            ...\n          ],\n        \"cfr_references\": [\n          {\n            \"title\": 2,\n            \"chapter\": \"IV\",\n          },\n          ...\n        ]\n      },\n  ...\n      {\n        \"name\": \"World Agricultural Outlook Board\",\n        \"short_name\": \"WAOB\",\n        \"display_name\": \"World Agricultural Outlook Board\",\n        \"sortable_name\": \"World Agricultural Outlook Board\",\n        \"slug\": \"world-agricultural-outlook-board\",\n        \"cfr_references\": [\n          {\n            \"title\": 7,\n            \"chapter\": \"XXXVIII\"\n          }\n        ]\n      }\n    ]\n  }\n```\n"
+      tags:
+      - Admin Service
+  /api/admin/v1/corrections.json:
+    get:
+      summary: Corrections route returns all eCFR corrections.
+      description: 'The Corrections service can be used to determine all corrections or can be filtered by title, effective date, or correction date.
+
+        '
+      parameters:
+      - name: date
+        description: 'Restricts results to eCFR corrections that occurred on or before the specified date and that were corrected on or after the specified date. Format: YYYY-MM-DD'
+        in: query
+        type: string
+        format: date
+        required: false
+      - name: title
+        description: 'Restricts results to the given title number: Format: ''1'', ''2'', ''50'', etc'
+        in: query
+        type: string
+        required: false
+      - name: error_corrected_date
+        description: 'Returns only corrections that were corrected on the given date. Format: YYYY-MM-DD'
+        in: query
+        type: string
+        format: date
+        required: false
+      responses:
+        '200':
+          description: "```json\n  \"ecfr_corrections\": [\n    {\n      \"id\": 1,\n      \"cfr_references\": [\n        {\n          \"cfr_reference\": \"7 CFR 2.80\",\n          \"hierarchy\": {\n            \"title\": \"7\",\n            \"subtitle\": \"A\",\n            \"part\": \"2\",\n            \"subpart\": \"N\",\n            \"section\": \"2.80\"\n          }\n        }\n      ],\n      \"corrective_action\": \"Amended\",\n      \"error_corrected\": \"2005-12-02\",\n      \"error_occurred\": \"2005-09-23\",\n      \"fr_citation\": \"70 FR 55706\",\n      \"position\": 1,\n      \"display_in_toc\": false,\n      \"title\": 7,\n      \"year\": 2005,\n      \"last_modified\": \"2021-12-22\"\n    },\n...\n    {\n        \"id\": 3858,\n        \"cfr_references\": [\n          {\n            \"cfr_reference\": \"50 CFR 660.71\",\n            \"hierarchy\": {\n              \"title\": \"50\",\n              \"part\": \"660\",\n              \"section\": \"660.71\"\n            }\n          }\n        ],\n        \"corrective_action\": \" (e)(398) and (399) correctly designated as (e)(298) and (299)\\r\\n           \\r\\n\",\n        \"error_corrected\": \"2023-01-09\",\n        \"error_occurred\": \"2023-01-01\",\n        \"fr_citation\": \"87 FR 77015\",\n        \"position\": 3,\n        \"display_in_toc\": false,\n        \"title\": 50,\n        \"year\": 2023,\n        \"last_modified\": \"2023-01-31\"\n      }\n    ]\n  ```\n"
+        '400':
+          description: null // Bad request
+        '404':
+          description: Title not found
+      tags:
+      - Admin Service
+  /api/admin/v1/corrections/title/{title}.json:
+    get:
+      summary: Corrections title route returns all corrections for the supplied title.
+      description: The Corrections service can be used to determine all corrections for the given title.
+      parameters:
+      - name: title
+        description: 'Restricts results to the given title number: Format: ''1'', ''2'', ''50'', etc'
+        in: path
+        type: string
+        required: true
+      responses:
+        '200':
+          description: "```json\n  {\n    \"ecfr_corrections\": [\n      {\n        \"id\": 1473,\n        \"cfr_references\": [\n          {\n            \"cfr_reference\": \"6 CFR Part 5\",\n            \"hierarchy\": {\n              \"title\": \"6\",\n              \"chapter\": \"I\",\n              \"part\": \"5\"\n            }\n          }\n        ],\n        \"corrective_action\": \"Paragraph 72 added\",\n        \"error_corrected\": \"2014-11-12\",\n        \"error_occurred\": \"2014-04-02\",\n        \"fr_citation\": \"79 FR 18441\",\n        \"position\": 1,\n        \"display_in_toc\": false,\n        \"title\": 6,\n        \"year\": 2014,\n        \"last_modified\": \"2021-12-22\"\n      },\n      {\n        \"id\": 2252,\n        \"cfr_references\": [\n          {\n            \"cfr_reference\": \"6 CFR 1001.6\",\n            \"hierarchy\": {\n              \"title\": \"6\",\n              \"chapter\": \"X\",\n              \"part\": \"1001\",\n              \"section\": \"1001.6\"\n            }\n          }\n        ],\n        \"corrective_action\": \"(b)(4) amended\",\n        \"error_corrected\": \"2018-01-16\",\n        \"error_occurred\": \"2017-08-28\",\n        \"fr_citation\": \"82 FR 34836\",\n        \"position\": 1,\n        \"display_in_toc\": false,\n        \"title\": 6,\n        \"year\": 2018,\n        \"last_modified\": \"2021-12-22\"\n      }\n    ]\n  }\n```\n"
+        '404':
+          descripton: Not Found
+      tags:
+      - Admin Service

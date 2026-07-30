@@ -1,7 +1,19 @@
 aid: ecfr
 name: eCFR
 description: Electronic Code of Federal Regulations REST API for accessing the official US Code of Federal Regulations, searching regulations, and retrieving regulatory version history.
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: free
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Free
+  confidence: medium
+  source:
+  - plans
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/ecfr.png
 url: https://raw.githubusercontent.com/api-evangelist/ecfr/refs/heads/main/apis.yml
 created: '2026-06-13'
 modified: '2026-06-13'
@@ -14,60 +26,42 @@ tags:
   - Open Data
   - United States
 apis:
-  - aid: ecfr:versioner
-    name: eCFR Versioner API
-    description: Provides access to the full text of CFR titles, parts, sections, and appendices at specific dates, as well as version history for regulatory content. Supports XML format responses for hierarchical regulatory structure.
-    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-    humanURL: https://www.ecfr.gov/developers/documentation/api/v1
-    baseURL: https://www.ecfr.gov/api/versioner/v1
-    tags:
-      - Regulations
-      - Version History
-      - CFR Titles
-    properties:
-      - type: Documentation
-        url: https://www.ecfr.gov/developers/documentation/api/v1
-      - type: OpenAPI
-        url: https://raw.githubusercontent.com/api-evangelist/ecfr/refs/heads/main/openapi/ecfr-openapi.json
-    contact:
-      - FN: eCFR Developer Support
-        url: https://www.ecfr.gov/developers
-  - aid: ecfr:search
-    name: eCFR Search API
-    description: Full-text search across all Code of Federal Regulations content, with support for filtering by title, agency, date ranges, and content type. Returns ranked results with hierarchical context and full-text excerpts.
-    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-    humanURL: https://www.ecfr.gov/developers/documentation/api/v1
-    baseURL: https://www.ecfr.gov/api/search/v1
-    tags:
-      - Search
-      - Full-Text Search
-      - Regulations
-    properties:
-      - type: Documentation
-        url: https://www.ecfr.gov/developers/documentation/api/v1
-      - type: OpenAPI
-        url: https://raw.githubusercontent.com/api-evangelist/ecfr/refs/heads/main/openapi/ecfr-openapi.json
-    contact:
-      - FN: eCFR Developer Support
-        url: https://www.ecfr.gov/developers
-  - aid: ecfr:admin
-    name: eCFR Admin API
-    description: Provides metadata about federal agencies and their CFR references, enabling lookup of which titles and chapters correspond to specific agencies.
-    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-    humanURL: https://www.ecfr.gov/developers/documentation/api/v1
-    baseURL: https://www.ecfr.gov/api/admin/v1
-    tags:
-      - Agencies
-      - Metadata
-      - Government
-    properties:
-      - type: Documentation
-        url: https://www.ecfr.gov/developers/documentation/api/v1
-      - type: OpenAPI
-        url: https://raw.githubusercontent.com/api-evangelist/ecfr/refs/heads/main/openapi/ecfr-openapi.json
-    contact:
-      - FN: eCFR Developer Support
-        url: https://www.ecfr.gov/developers
+- aid: ecfr:ecfr-admin-service-api
+  name: eCFR Admin Service API
+  description: Access eCFR metadata through JSON
+  humanURL: https://www.ecfr.gov/developers/documentation/api/v1
+  baseURL: https://www.ecfr.gov/api/versioner/v1
+  tags:
+  - Admin Service
+  properties:
+  - type: OpenAPI
+    url: openapi/ecfr-admin-service-api-openapi.yml
+  - type: Documentation
+    url: https://www.ecfr.gov/developers/documentation/api/v1
+- aid: ecfr:ecfr-search-service-api
+  name: eCFR Search Service API
+  description: Historical search of the eCFR
+  humanURL: https://www.ecfr.gov/developers/documentation/api/v1
+  baseURL: https://www.ecfr.gov/api/versioner/v1
+  tags:
+  - Search Service
+  properties:
+  - type: OpenAPI
+    url: openapi/ecfr-search-service-api-openapi.yml
+  - type: Documentation
+    url: https://www.ecfr.gov/developers/documentation/api/v1
+- aid: ecfr:ecfr-versioner-service-api
+  name: eCFR Versioner Service API
+  description: Access CFR content and structure files through JSON and XML
+  humanURL: https://www.ecfr.gov/developers/documentation/api/v1
+  baseURL: https://www.ecfr.gov/api/versioner/v1
+  tags:
+  - Versioner Service
+  properties:
+  - type: OpenAPI
+    url: openapi/ecfr-versioner-service-api-openapi.yml
+  - type: Documentation
+    url: https://www.ecfr.gov/developers/documentation/api/v1
 common:
   - type: AgenticAccess
     url: agentic-access/ecfr-agentic-access.yml

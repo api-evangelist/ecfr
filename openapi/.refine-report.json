@@ -1,0 +1,22 @@
+{
+  "provider": "ecfr",
+  "sources": [
+    "ecfr-admin-service-api-openapi.yml",
+    "ecfr-search-service-api-openapi.yml",
+    "ecfr-versioner-service-api-openapi.yml"
+  ],
+  "outputs": [
+    "ecfr-admin-service-api-openapi.yml",
+    "ecfr-search-service-api-openapi.yml",
+    "ecfr-versioner-service-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [
+    "ecfr-admin-service-api-openapi.yml: info.version missing",
+    "ecfr-search-service-api-openapi.yml: info.version missing",
+    "ecfr-versioner-service-api-openapi.yml: info.version missing"
+  ],
+  "notes": [],
+  "skipped": []
+}

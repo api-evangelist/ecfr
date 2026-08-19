@@ -1,0 +1,426 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "eCFR API Documentation Admin Service Search Service API"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Search Service",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Search results",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/search/v1/results",
+            "params": [
+              {
+                "name": "query",
+                "value": "",
+                "type": "query",
+                "description": "Search term; searches the headings and the full text"
+              },
+              {
+                "name": "agency_slugs[]",
+                "value": "",
+                "type": "query",
+                "description": "limit to content currently associated with these agencies (see AdminService agencies endpoint to retrieve a list of agency slugs)"
+              },
+              {
+                "name": "date",
+                "value": "",
+                "type": "query",
+                "description": "limit to content present on this date (YYYY-MM-DD)"
+              },
+              {
+                "name": "last_modified_after",
+                "value": "",
+                "type": "query",
+                "description": "limit to content last modified after this date (YYYY-MM-DD)"
+              },
+              {
+                "name": "last_modified_on_or_after",
+                "value": "",
+                "type": "query",
+                "description": "limit to content last modified on or after this date (YYYY-MM-DD)"
+              },
+              {
+                "name": "last_modified_before",
+                "value": "",
+                "type": "query",
+                "description": "limit to content last modified before this date (YYYY-MM-DD)"
+              },
+              {
+                "name": "last_modified_on_or_before",
+                "value": "",
+                "type": "query",
+                "description": "limit to content last modified on or before this date (YYYY-MM-DD)"
+              },
+              {
+                "name": "per_page",
+                "value": "",
+                "type": "query",
+                "description": "number of results per page; max of 1,000"
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "page of results; can't paginate beyond 10,000 total results"
+              },
+              {
+                "name": "order",
+                "value": "",
+                "type": "query",
+                "description": "order of results"
+              },
+              {
+                "name": "paginate_by",
+                "value": "",
+                "type": "query",
+                "description": "how results should be paginated - 'date' will group results so that all results from a date appear on the same page of pagination. If 'date' is chosen then one of the last_modified_* options is required."
+              }
+            ]
+          },
+          "docs": "Search results"
+        },
+        {
+          "info": {
+            "name": "Search result count",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/search/v1/count",
+            "params": [
+              {
+                "name": "query",
+                "value": "",
+                "type": "query",
+                "description": "Search term; searches the headings and the full text"
+              },
+              {
+                "name": "agency_slugs[]",
+                "value": "",
+                "type": "query",
+                "description": "limit to content currently associated with these agencies (see AdminService agencies endpoint to retrieve a list of agency slugs)"
+              },
+              {
+                "name": "date",
+                "value": "",
+                "type": "query",
+                "description": "limit to content present on this date (YYYY-MM-DD)"
+              },
+              {
+                "name": "last_modified_after",
+                "value": "",
+                "type": "query",
+                "description": "limit to content last modified after this date (YYYY-MM-DD)"
+              },
+              {
+                "name": "last_modified_on_or_after",
+                "value": "",
+                "type": "query",
+                "description": "limit to content last modified on or after this date (YYYY-MM-DD)"
+              },
+              {
+                "name": "last_modified_before",
+                "value": "",
+                "type": "query",
+                "description": "limit to content last modified before this date (YYYY-MM-DD)"
+              },
+              {
+                "name": "last_modified_on_or_before",
+                "value": "",
+                "type": "query",
+                "description": "limit to content last modified on or before this date (YYYY-MM-DD)"
+              }
+            ]
+          },
+          "docs": "Search result count"
+        },
+        {
+          "info": {
+            "name": "Search summary details",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/search/v1/summary",
+            "params": [
+              {
+                "name": "query",
+                "value": "",
+                "type": "query",
+                "description": "Search term; searches the headings and the full text"
+              },
+              {
+                "name": "agency_slugs[]",
+                "value": "",
+                "type": "query",
+                "description": "limit to content currently associated with these agencies (see AdminService agencies endpoint to retrieve a list of agency slugs)"
+              },
+              {
+                "name": "date",
+                "value": "",
+                "type": "query",
+                "description": "limit to content present on this date (YYYY-MM-DD)"
+              },
+              {
+                "name": "last_modified_after",
+                "value": "",
+                "type": "query",
+                "description": "limit to content last modified after this date (YYYY-MM-DD)"
+              },
+              {
+                "name": "last_modified_on_or_after",
+                "value": "",
+                "type": "query",
+                "description": "limit to content last modified on or after this date (YYYY-MM-DD)"
+              },
+              {
+                "name": "last_modified_before",
+                "value": "",
+                "type": "query",
+                "description": "limit to content last modified before this date (YYYY-MM-DD)"
+              },
+              {
+                "name": "last_modified_on_or_before",
+                "value": "",
+                "type": "query",
+                "description": "limit to content last modified on or before this date (YYYY-MM-DD)"
+              }
+            ]
+          },
+          "docs": "Search summary details"
+        },
+        {
+          "info": {
+            "name": "Search result counts by date",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/search/v1/counts/daily",
+            "params": [
+              {
+                "name": "query",
+                "value": "",
+                "type": "query",
+                "description": "Search term; searches the headings and the full text"
+              },
+              {
+                "name": "agency_slugs[]",
+                "value": "",
+                "type": "query",
+                "description": "limit to content currently associated with these agencies (see AdminService agencies endpoint to retrieve a list of agency slugs)"
+              },
+              {
+                "name": "date",
+                "value": "",
+                "type": "query",
+                "description": "limit to content present on this date (YYYY-MM-DD)"
+              },
+              {
+                "name": "last_modified_after",
+                "value": "",
+                "type": "query",
+                "description": "limit to content last modified after this date (YYYY-MM-DD)"
+              },
+              {
+                "name": "last_modified_on_or_after",
+                "value": "",
+                "type": "query",
+                "description": "limit to content last modified on or after this date (YYYY-MM-DD)"
+              },
+              {
+                "name": "last_modified_before",
+                "value": "",
+                "type": "query",
+                "description": "limit to content last modified before this date (YYYY-MM-DD)"
+              },
+              {
+                "name": "last_modified_on_or_before",
+                "value": "",
+                "type": "query",
+                "description": "limit to content last modified on or before this date (YYYY-MM-DD)"
+              }
+            ]
+          },
+          "docs": "Search result counts by date"
+        },
+        {
+          "info": {
+            "name": "Search result counts by title",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/search/v1/counts/titles",
+            "params": [
+              {
+                "name": "query",
+                "value": "",
+                "type": "query",
+                "description": "Search term; searches the headings and the full text"
+              },
+              {
+                "name": "agency_slugs[]",
+                "value": "",
+                "type": "query",
+                "description": "limit to content currently associated with these agencies (see AdminService agencies endpoint to retrieve a list of agency slugs)"
+              },
+              {
+                "name": "date",
+                "value": "",
+                "type": "query",
+                "description": "limit to content present on this date (YYYY-MM-DD)"
+              },
+              {
+                "name": "last_modified_after",
+                "value": "",
+                "type": "query",
+                "description": "limit to content last modified after this date (YYYY-MM-DD)"
+              },
+              {
+                "name": "last_modified_on_or_after",
+                "value": "",
+                "type": "query",
+                "description": "limit to content last modified on or after this date (YYYY-MM-DD)"
+              },
+              {
+                "name": "last_modified_before",
+                "value": "",
+                "type": "query",
+                "description": "limit to content last modified before this date (YYYY-MM-DD)"
+              },
+              {
+                "name": "last_modified_on_or_before",
+                "value": "",
+                "type": "query",
+                "description": "limit to content last modified on or before this date (YYYY-MM-DD)"
+              }
+            ]
+          },
+          "docs": "Search result counts by title"
+        },
+        {
+          "info": {
+            "name": "Search result counts by hierarchy",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/search/v1/counts/hierarchy",
+            "params": [
+              {
+                "name": "query",
+                "value": "",
+                "type": "query",
+                "description": "Search term; searches the headings and the full text"
+              },
+              {
+                "name": "agency_slugs[]",
+                "value": "",
+                "type": "query",
+                "description": "limit to content currently associated with these agencies (see AdminService agencies endpoint to retrieve a list of agency slugs)"
+              },
+              {
+                "name": "date",
+                "value": "",
+                "type": "query",
+                "description": "limit to content present on this date (YYYY-MM-DD)"
+              },
+              {
+                "name": "last_modified_after",
+                "value": "",
+                "type": "query",
+                "description": "limit to content last modified after this date (YYYY-MM-DD)"
+              },
+              {
+                "name": "last_modified_on_or_after",
+                "value": "",
+                "type": "query",
+                "description": "limit to content last modified on or after this date (YYYY-MM-DD)"
+              },
+              {
+                "name": "last_modified_before",
+                "value": "",
+                "type": "query",
+                "description": "limit to content last modified before this date (YYYY-MM-DD)"
+              },
+              {
+                "name": "last_modified_on_or_before",
+                "value": "",
+                "type": "query",
+                "description": "limit to content last modified on or before this date (YYYY-MM-DD)"
+              }
+            ]
+          },
+          "docs": "Search result counts by hierarchy"
+        },
+        {
+          "info": {
+            "name": "Search suggestions",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/search/v1/suggestions",
+            "params": [
+              {
+                "name": "query",
+                "value": "",
+                "type": "query",
+                "description": "Search term; searches the headings and the full text"
+              },
+              {
+                "name": "agency_slugs[]",
+                "value": "",
+                "type": "query",
+                "description": "limit to content currently associated with these agencies (see AdminService agencies endpoint to retrieve a list of agency slugs)"
+              },
+              {
+                "name": "date",
+                "value": "",
+                "type": "query",
+                "description": "limit to content present on this date (YYYY-MM-DD)"
+              },
+              {
+                "name": "last_modified_after",
+                "value": "",
+                "type": "query",
+                "description": "limit to content last modified after this date (YYYY-MM-DD)"
+              },
+              {
+                "name": "last_modified_on_or_after",
+                "value": "",
+                "type": "query",
+                "description": "limit to content last modified on or after this date (YYYY-MM-DD)"
+              },
+              {
+                "name": "last_modified_before",
+                "value": "",
+                "type": "query",
+                "description": "limit to content last modified before this date (YYYY-MM-DD)"
+              },
+              {
+                "name": "last_modified_on_or_before",
+                "value": "",
+                "type": "query",
+                "description": "limit to content last modified on or before this date (YYYY-MM-DD)"
+              }
+            ]
+          },
+          "docs": "Search suggestions"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

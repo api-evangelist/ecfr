@@ -1,0 +1,78 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "eCFR API Documentation Admin Service API"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Admin Service",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Agencies",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/admin/v1/agencies.json"
+          },
+          "docs": "All top-level agencies in name order with children also in name order"
+        },
+        {
+          "info": {
+            "name": "Corrections route returns all eCFR corrections.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/admin/v1/corrections.json",
+            "params": [
+              {
+                "name": "date",
+                "value": "",
+                "type": "query",
+                "description": "Restricts results to eCFR corrections that occurred on or before the specified date and that were corrected on or after the specified date. Format: YYYY-MM-DD"
+              },
+              {
+                "name": "title",
+                "value": "",
+                "type": "query",
+                "description": "Restricts results to the given title number: Format: '1', '2', '50', etc"
+              },
+              {
+                "name": "error_corrected_date",
+                "value": "",
+                "type": "query",
+                "description": "Returns only corrections that were corrected on the given date. Format: YYYY-MM-DD"
+              }
+            ]
+          },
+          "docs": "The Corrections service can be used to determine all corrections or can be filtered by title, effective date, or correction date.\n"
+        },
+        {
+          "info": {
+            "name": "Corrections title route returns all corrections for the supplied title.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/admin/v1/corrections/title/:title.json",
+            "params": [
+              {
+                "name": "title",
+                "value": "",
+                "type": "path",
+                "description": "Restricts results to the given title number: Format: '1', '2', '50', etc"
+              }
+            ]
+          },
+          "docs": "The Corrections service can be used to determine all corrections for the given title."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

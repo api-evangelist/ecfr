@@ -1,0 +1,37 @@
+slug: ecfr
+provider: eCFR
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Public Sector & Government
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 2
+edges:
+- tag: Versioner Service
+  spec_file: ecfr-versioner-service-api-openapi.yml
+  capability_id: BC-3210.60
+  capability_id_l1: BC-3210
+  capability_name: Legal Codification and Publication
+  confidence: 0.8
+  evidence: Source XML for a title or subset of a title ... Returns an array of all sections and appendices
+    inside a title ... Structure JSON for a title
+  reason: Serves the authoritative, point-in-time consolidated text and version history of Code of Federal
+    Regulations titles — compilation, consolidation and publication/maintenance of statutory and regulatory
+    texts.
+- tag: Admin Service
+  spec_file: ecfr-admin-service-api-openapi.yml
+  capability_id: BC-3210.60
+  capability_id_l1: BC-3210
+  capability_name: Legal Codification and Publication
+  confidence: 0.7
+  evidence: Corrections route returns all eCFR corrections. ... Corrections title route returns all corrections
+    for the supplied title.
+  reason: Endpoints expose the agency list and the official corrections applied to Code of Federal Regulations
+    titles — i.e. maintenance and consolidation of authoritative regulatory texts, which is Legal Codification
+    and Publication. Slight ambiguity because part of the surface is metadata, hence 0.7.

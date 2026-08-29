@@ -75,6 +75,9 @@ apis:
   - type: Documentation
     url: https://www.ecfr.gov/developers/documentation/api/v1
 common:
+  - type: CapabilityMap
+    url: capabilities/ecfr-capability-edges.yml
+    name: eCFR Business Capability Map
   - type: AgenticAccess
     url: agentic-access/ecfr-agentic-access.yml
   - type: VulnerabilityDisclosure

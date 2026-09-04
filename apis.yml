@@ -23,6 +23,7 @@ accessModel:
   confidence: medium
   source:
   - plans
+  - {url: 'https://www.ecfr.gov', status: 302, note: 'declared website redirects to https://unblock.federalregister.gov/ — a different registrable domain (ecfr.gov -> federalregister.gov), possible rename or acquisition (probed 2026-09-03, roadmap#169)'}
   generated: '2026-07-22'
   method: derived
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/ecfr.png

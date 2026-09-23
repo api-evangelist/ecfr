@@ -1,9 +1,7 @@
 {
   "provider": "ecfr",
   "sources": [
-    "ecfr-admin-service-api-openapi.yml",
-    "ecfr-search-service-api-openapi.yml",
-    "ecfr-versioner-service-api-openapi.yml"
+    "_original/ecfr-openapi.json"
   ],
   "outputs": [
     "ecfr-admin-service-api-openapi.yml",
@@ -13,10 +11,16 @@
   "archived": [],
   "errors": [],
   "warnings": [
-    "ecfr-admin-service-api-openapi.yml: info.version missing",
-    "ecfr-search-service-api-openapi.yml: info.version missing",
-    "ecfr-versioner-service-api-openapi.yml: info.version missing"
+    "ecfr-openapi.json: info.version missing"
   ],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "ecfr-openapi.json: upgraded swagger 2.0 -> OpenAPI 3.2.0",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "ecfr-admin-service-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "ecfr-search-service-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "ecfr-versioner-service-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }

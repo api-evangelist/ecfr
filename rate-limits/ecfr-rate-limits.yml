@@ -1,3 +1,7 @@
+# Provenance stamped 2026-10-07 (roadmap#943): written by an API Evangelist sweep (undated — the file carries no date and git cannot supply one), not
+# harvested from the provider. `method: generated` so the economics campaign may replace it with a
+# dated, verbatim transcription; every figure below is unverified until it does.
+method: generated
 name: eCFR Rate Limits
 description: The eCFR API is a free government service. While no formal rate limit policy is published, the API enforces automated scraping restrictions via IP-based blocking. Direct API access is permitted and encouraged as the recommended alternative to web scraping. No authentication or API key is required.
 limits:

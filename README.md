@@ -1,4 +1,4 @@
-# eCFR (ecfr)
+# eCFR
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,104 +66,147 @@
 
 Electronic Code of Federal Regulations REST API for accessing the official US Code of Federal Regulations, searching regulations, and retrieving regulatory version history.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/ecfr/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/ecfr/refs/heads/main/apis.yml)
+**Areas:** Federal Regulations · Government · Legal · Compliance · Open Data · United States
 
-## Tags
+## eCFR on APIs.io
 
-- Federal Regulations
-- Government
-- Legal
-- Compliance
-- Open Data
-- United States
+Everything profiled for eCFR is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/ecfr/](https://apis.io/providers/ecfr/)** — or go straight to one of the APIs or properties below.
 
-## Timestamps
+### APIs (3)
 
-- **Created:** 2026-06-13
-- **Modified:** 2026-06-13
+- [eCFR Admin Service API](https://apis.io/apis/ecfr/ecfr-admin-service-api/) — Access eCFR metadata through JSON
+- [eCFR Search Service API](https://apis.io/apis/ecfr/ecfr-search-service-api/) — Historical search of the eCFR
+- [eCFR Versioner Service API](https://apis.io/apis/ecfr/ecfr-versioner-service-api/) — Access CFR content and structure files through JSON and XML
 
-## APIs
+### Published properties
 
-### eCFR Versioner API
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-Provides access to the full text of CFR titles, parts, sections, and appendices at specific dates, as well as version history for regulatory content. Supports XML format responses for hierarchical regulatory structure.
+#### Agentic access (1)
 
-- **Human URL:** [https://www.ecfr.gov/developers/documentation/api/v1](https://www.ecfr.gov/developers/documentation/api/v1)
-- **Base URL:** `https://www.ecfr.gov/api/versioner/v1`
+Which operations an agent can call, which act, and which need a human in the loop.
 
-#### Tags
+- [Ecfr Agentic Access](https://apis.io/agentic-access/ecfr/ecfr-agentic-access/)
 
-- Regulations
-- Version History
-- CFR Titles
+#### JSON Schema (7)
 
-#### Properties
+The data models the API reads and writes.
 
-- [Documentation](https://www.ecfr.gov/developers/documentation/api/v1)
-- [OpenAPI](https://raw.githubusercontent.com/api-evangelist/ecfr/refs/heads/main/openapi/ecfr-openapi.json) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
+- [AgenciesResponse](https://apis.io/schemas/ecfr/agencies-response/)
+- [Agency](https://apis.io/schemas/ecfr/agency/)
+- [CfrAncestor](https://apis.io/schemas/ecfr/cfr-ancestor/)
+- [CfrTitle](https://apis.io/schemas/ecfr/cfr-title/)
+- [ContentVersion](https://apis.io/schemas/ecfr/content-version/)
+- [EcfrCorrection](https://apis.io/schemas/ecfr/correction/)
+- [SearchResult](https://apis.io/schemas/ecfr/search-result/)
 
-### eCFR Search API
+#### Examples (5)
 
-Full-text search across all Code of Federal Regulations content, with support for filtering by title, agency, date ranges, and content type. Returns ranked results with hierarchical context and full-text excerpts.
+Example requests and responses.
 
-- **Human URL:** [https://www.ecfr.gov/developers/documentation/api/v1](https://www.ecfr.gov/developers/documentation/api/v1)
-- **Base URL:** `https://www.ecfr.gov/api/search/v1`
+- [Agencies Response](https://apis.io/examples/ecfr/agencies-response/)
+- [Ancestry Response](https://apis.io/examples/ecfr/ancestry-response/)
+- [Search Results Response](https://apis.io/examples/ecfr/search-results-response/)
+- [Titles Response](https://apis.io/examples/ecfr/titles-response/)
+- [Versions Response](https://apis.io/examples/ecfr/versions-response/)
 
-#### Tags
+#### Collections (3)
 
-- Search
-- Full-Text Search
-- Regulations
+Postman and Open Collection request collections.
 
-#### Properties
+- [eCFR API Documentation Admin Service API](https://apis.io/collections/ecfr/open-ecfr-admin-service-api/)
+- [eCFR API Documentation Admin Service Search Service API](https://apis.io/collections/ecfr/open-ecfr-search-service-api/)
+- [eCFR API Documentation Admin Service Versioner Service API](https://apis.io/collections/ecfr/open-ecfr-versioner-service-api/)
 
-- [Documentation](https://www.ecfr.gov/developers/documentation/api/v1)
-- [OpenAPI](https://raw.githubusercontent.com/api-evangelist/ecfr/refs/heads/main/openapi/ecfr-openapi.json) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
+#### Governance rules (1)
 
-### eCFR Admin API
+Spectral rulesets for the provider's contracts.
 
-Provides metadata about federal agencies and their CFR references, enabling lookup of which titles and chapters correspond to specific agencies.
+- [eCFR — jsonschema rules](https://apis.io/rules/ecfr/ecfr-jsonschema-spectral-rules/)
 
-- **Human URL:** [https://www.ecfr.gov/developers/documentation/api/v1](https://www.ecfr.gov/developers/documentation/api/v1)
-- **Base URL:** `https://www.ecfr.gov/api/admin/v1`
+#### Security (2)
 
-#### Tags
+Authentication, trust centre, and vulnerability disclosure.
 
-- Agencies
-- Metadata
-- Government
+- [Ecfr Domain Security](https://apis.io/security/ecfr/ecfr-domain-security/)
+- [Ecfr Vulnerability Disclosure](https://apis.io/security/ecfr/ecfr-vulnerability-disclosure/)
 
-#### Properties
+#### Plans and pricing (1)
 
-- [Documentation](https://www.ecfr.gov/developers/documentation/api/v1)
-- [OpenAPI](https://raw.githubusercontent.com/api-evangelist/ecfr/refs/heads/main/openapi/ecfr-openapi.json) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
+Published plans, tiers and prices.
 
-## Common Properties
+- [Ecfr Plans Pricing](https://apis.io/plans/ecfr/ecfr-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Ecfr Rate Limits](https://apis.io/rate-limits/ecfr/ecfr-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Ecfr Finops](https://apis.io/finops/ecfr/ecfr-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
 
 - [Website](https://www.ecfr.gov)
 - [Documentation](https://www.ecfr.gov/developers/documentation/api/v1)
-- [Git Hub Org](https://github.com/usgpo)
-- [Blog](https://www.federalregister.gov/blog)
 - [Pricing](https://www.ecfr.gov/developers)
-- [Plans](https://raw.githubusercontent.com/api-evangelist/ecfr/refs/heads/main/plans/ecfr-plans-pricing.yml)
-- [Rate Limits](https://raw.githubusercontent.com/api-evangelist/ecfr/refs/heads/main/rate-limits/ecfr-rate-limits.yml)
-- [Fin Ops](https://raw.githubusercontent.com/api-evangelist/ecfr/refs/heads/main/finops/ecfr-finops.yml)
-- [OpenAPI](https://raw.githubusercontent.com/api-evangelist/ecfr/refs/heads/main/openapi/ecfr-openapi.json) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [JSON Schema](https://raw.githubusercontent.com/api-evangelist/ecfr/refs/heads/main/json-schema/agency.json) — [JSON Schema](https://json-schema.org/specification)
-- [JSON Schema](https://raw.githubusercontent.com/api-evangelist/ecfr/refs/heads/main/json-schema/cfr-title.json) — [JSON Schema](https://json-schema.org/specification)
-- [JSON Schema](https://raw.githubusercontent.com/api-evangelist/ecfr/refs/heads/main/json-schema/search-result.json) — [JSON Schema](https://json-schema.org/specification)
-- [JSON Schema](https://raw.githubusercontent.com/api-evangelist/ecfr/refs/heads/main/json-schema/content-version.json) — [JSON Schema](https://json-schema.org/specification)
-- [JSON Schema](https://raw.githubusercontent.com/api-evangelist/ecfr/refs/heads/main/json-schema/correction.json) — [JSON Schema](https://json-schema.org/specification)
-- [JSON Schema](https://raw.githubusercontent.com/api-evangelist/ecfr/refs/heads/main/json-schema/cfr-ancestor.json) — [JSON Schema](https://json-schema.org/specification)
-- [Vocabulary](https://raw.githubusercontent.com/api-evangelist/ecfr/refs/heads/main/vocabulary/ecfr-vocabulary.json)
-- [J S O N L D Context](https://raw.githubusercontent.com/api-evangelist/ecfr/refs/heads/main/json-ld/ecfr-context.json)
-- [Examples](https://raw.githubusercontent.com/api-evangelist/ecfr/refs/heads/main/examples/titles-response.json)
-- [Examples](https://raw.githubusercontent.com/api-evangelist/ecfr/refs/heads/main/examples/agencies-response.json)
-- [Examples](https://raw.githubusercontent.com/api-evangelist/ecfr/refs/heads/main/examples/search-results-response.json)
-- [Examples](https://raw.githubusercontent.com/api-evangelist/ecfr/refs/heads/main/examples/ancestry-response.json)
-- [Examples](https://raw.githubusercontent.com/api-evangelist/ecfr/refs/heads/main/examples/versions-response.json)
+- [Blog](https://www.federalregister.gov/blog)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 22.4** — emerging · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 57.1 |
+| Contract quality | 43.7 |
+| Contract governance | 23.5 |
+| Operational transparency | 10.5 |
+| Developer ergonomics | 0.0 |
+| Access clarity | 5.3 |
+
+**Agent readiness 21.5** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | na |
+| MCP Server | — |
+| Auth Clarity | — |
+| Idempotency | na |
+| Error Semantics | — |
+| OpenAPI Examples | documented (partial credit) |
+| Rate Limit Signal | documented (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | na |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 16.7** — Government & Public Sector
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/ecfr/](https://apis.io/providers/ecfr/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for eCFR: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/ecfr/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
